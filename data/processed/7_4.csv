@@ -1,0 +1,7 @@
+rod_id,rod_type,rod_power,rod_action,rod_len_min,rod_len_max
+5,Cast,4,4,84,86
+8,Cast,4,4,82,86
+9,Cast,5,2,82,86
+12,Cast,5,4,78,86
+15,Spin,4,2,82,86
+18,Spin,5,2,82,86

@@ -18,9 +18,11 @@ tackle/
 │   ├── schema/                  # Holds the base schema definition files (e.g., SQL scripts for creating tables)
 │   │   ├── constraints/         # SQL scripts for constraints like foreign keys, unique keys, etc.
 │   │   ├── enums/               # SQL scripts for defining ENUM types or other custom data types
+│   │   ├── joins
 │   │   ├── relationships/       # Scripts defining relationships between tables (e.g., foreign keys)
 │   │   ├── setup/               # Initial schema setup, such as database creation and initial configurations
-│   │   └── tables/              # SQL scripts for table creation
+│   │   ├── tables/              # SQL scripts for table creation
+│   │   └── views
 │   ├── seeds/                   # Stores seed data scripts to populate the database with initial data
 │
 ├── docker/                      # Docker-related files and directories

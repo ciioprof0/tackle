@@ -7,7 +7,7 @@ tackle/
 │   └── raw/                     # Raw, unprocessed data files
 │       └── data.xlsx            # Example raw data file in Excel format
 │
-├── database/                    # Manages database-related files and directories
+├── db/                          # Manages database-related files and directories
 │   ├── backups/                 # Directory to store database backup files
 │   ├── config/                  # Configuration files for database connections, environment variables, etc.
 │   ├── functions/               # SQL scripts for user-defined functions
@@ -18,10 +18,10 @@ tackle/
 │   ├── schema/                  # Holds the base schema definition files (e.g., SQL scripts for creating tables)
 │   │   ├── constraints/         # SQL scripts for constraints like foreign keys, unique keys, etc.
 │   │   ├── enums/               # SQL scripts for defining ENUM types or other custom data types
-│   │   ├── initial/             # Initial schema setup, such as base table creation and initial configurations
 │   │   ├── relationships/       # Scripts defining relationships between tables (e.g., foreign keys)
+│   │   ├── setup/               # Initial schema setup, such as database creation and initial configurations
 │   │   └── tables/              # SQL scripts for table creation
-│   └── seeds/                   # Stores seed data scripts to populate the database with initial data
+│   ├── seeds/                   # Stores seed data scripts to populate the database with initial data
 │
 ├── docker/                      # Docker-related files and directories
 │   ├── app/                     # Docker configuration for the application

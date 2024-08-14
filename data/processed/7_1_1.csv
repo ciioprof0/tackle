@@ -1,0 +1,13 @@
+line_id,line_type,line_test_min,line_test_max
+1,braid,50,65
+2,monofilament,10,15
+3,flurocarbon,12,20
+4,flurocarbon,6,10
+5,flurocarbon,6,15
+6,flurocarbon,12,17
+7,flurocarbon,10,15
+8,flurocarbon,20,25
+9,flurocarbon,15,20
+10,flurocarbon,12,25
+11,monofilament,15,20
+12,monofilament,12,20

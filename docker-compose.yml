@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./src/app:/usr/src/app
+    environment:
+      - DATABASE_URL=mysql://root:root@db:3306/tackle
+    depends_on:
+      db:
+        condition: service_healthy
+    links:
+      - db
+
+  db:
+    image: mysql:5.7
+    ports:
+      - "32000:3306"
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: tackle
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d/:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 10s
+      retries: 10

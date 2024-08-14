@@ -1,0 +1,30 @@
+# see https://docs.travis-ci.com/user/docker/
+services: docker
+
+before_install:
+  # Print Docker version for debugging purposes
+  - docker -v
+  # Disable default database services that are not needed
+  # http://docs.travis-ci.com/user/database-setup/#MySQL
+  - sudo /etc/init.d/mysql stop
+  - sudo /etc/init.d/postgresql stop
+
+# Uncomment and customize the `install` section if you need to build a specific Docker image
+# install:
+  # Launch services
+  #- docker build -f Dockerfile -t "tackle/app:latest" .
+
+before_script:
+  # Start Docker services using docker-compose
+  - docker-compose up -d --build
+  # Wait for services to start up (adjust sleep duration if necessary)
+  - sleep 10
+
+script:
+  # Run tests inside the Docker container
+  #- docker run -it "tackle/app:latest" python -m pytest tests
+  - docker-compose exec app python -m pytest tests  # Update 'app' to your service name if different
+
+after_script:
+  # Shut down Docker services after tests are completed
+  - docker-compose down

@@ -17,6 +17,8 @@ EXPOSE 5000
 # Define environment variable
 ENV NAME FishingCompanion
 
+# Run the command on container startup
+# CMD tail -f /dev/null
+
 # Run app.py when the container launches
-#CMD tail -f /dev/null
 CMD ["python", "main.py"]

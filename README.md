@@ -73,12 +73,13 @@ mysql -u your_username -p tackle < db/tackle_dump.sql"
 
 This is an academic project, but contributions are welcome. Please submit pull requests or open issues for any suggestions or improvements.
 
-## License and Data Source
-The database schema, queries, and documentation are released under the GNU General Public License v3.0.
-
-The data used in this project comes from a compilation of tournament fishing experiences, focusing on bass fishing. This dataset includes detailed information on various fishing tackle components, such as baits, rods, reels, and lines, tailored specifically to enhance the bass fishing experience. I compiled the data from the [Deep Dive](https://deepdiveapp.com/) mobile app and is used for educational purposes only.
+## Data Source
+The data used in this project comes from a compilation of tournament fishing experiences. This dataset includes detailed information on various fishing tackle components, such as baits, rods, reels, and lines, tailored specifically to enhance the bass fishing experience. I compiled the data from the [Deep Dive](https://deepdiveapp.com/) mobile app and is used for educational purposes only.
 
 As an occasional bass fisherman, I highly recommend [Deep Dive](https://deepdiveapp.com/). Whether you’re new to bass fishing or a seasoned angler, this app leverages a comprehensive and well-structured database to provide you with personalized tackle recommendations that can make all the difference in your fishing success. Give it a try and see how it can help you land that trophy bass!
+
+## License
+The database schema, queries, and documentation are released under the GNU General Public License v3.0.
 
 ## Acknowledgements
 Special thanks to Professor Nayem Rahman for guidance throughout the project and for providing the opportunity to explore relational database concepts in depth.

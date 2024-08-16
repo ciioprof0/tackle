@@ -20,7 +20,7 @@ This project emphasizes the critical role of the `tackle` database in storing, m
 - **`db/`:** Contains the SQL scripts for creating and seeding the database.
   - **`schema/`:** Database schema creation scripts.
   - **`seeds/`:** Scripts to seed the database with initial data.
-  - **`queries/`:** A collection of SQL queries to retrieve and analyze data.
+  - **`schema/queries/`:** A collection of SQL queries to retrieve and analyze data.
 - **`data/`:** Contains raw and processed data files used to populate the database.
 - **`docs/`:** Contains design documentation, including conceptual, logical, and physical models of the database.
 - **`src/`:** (To be implemented) Source code for the Fishing Companion application, including the Flask API.
@@ -44,7 +44,7 @@ To set up the database, follow these steps:
 
 2. **Create the database (if not already created):**
 ```bash
-        mysql -u your_username -p -e "CREATE DATABASE tackle;"
+mysql -u your_username -p -e "CREATE DATABASE tackle;"
 ```
 
 3. **Import the database dump:**
@@ -52,7 +52,7 @@ To set up the database, follow these steps:
 Run the following command to import the database dump into your MySQL instance:
 
 ```bash
-        mysql -u your_username -p tackle < db/tackle_dump.sql"
+mysql -u your_username -p tackle < db/tackle_dump.sql"
 ```
    - Update the path to the `tackle_dump.sql` file if necessary.
    - User name is 'your_username' by default.
@@ -78,7 +78,7 @@ The database schema, queries, and documentation are released under the GNU Gener
 
 The data used in this project comes from a compilation of tournament fishing experiences, focusing on bass fishing. This dataset includes detailed information on various fishing tackle components, such as baits, rods, reels, and lines, tailored specifically to enhance the bass fishing experience. I compiled the data from the [Deep Dive](https://deepdiveapp.com/) mobile app and is used for educational purposes only.
 
-As an occasional bass fisherman, I highly recommend the [Deep Dive](https://deepdiveapp.com/). Whether you’re new to bass fishing or a seasoned angler, this app leverages a comprehensive and well-structured database to provide you with personalized tackle recommendations that can make all the difference in your fishing success. Give it a try and see how it can help you land that trophy bass!
+As an occasional bass fisherman, I highly recommend [Deep Dive](https://deepdiveapp.com/). Whether you’re new to bass fishing or a seasoned angler, this app leverages a comprehensive and well-structured database to provide you with personalized tackle recommendations that can make all the difference in your fishing success. Give it a try and see how it can help you land that trophy bass!
 
 ## Acknowledgements
 Special thanks to Professor Nayem Rahman for guidance throughout the project and for providing the opportunity to explore relational database concepts in depth.

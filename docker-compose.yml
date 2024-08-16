@@ -1,32 +1,46 @@
 version: '3.8'
 
 services:
-  app:
-    build: .
-    ports:
-      - "5000:5000"
-    volumes:
-      - ./src/app:/usr/src/app
-    environment:
-      - DATABASE_URL=mysql://root:root@db:3306/tackle
-    depends_on:
-      db:
-        condition: service_healthy
-    links:
-      - db
+#   app:
+#     build: .
+#     ports:
+#       - "5000:5000"
+#     volumes:
+#       - ./src/app:/usr/src/app
+#     environment:
+#       - DATABASE_URL=mysql://root:root@db:3306/tackle
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     command: flask run --host=0.0.0.0
 
   db:
-    image: mysql:5.7
+    image: mysql:8.0
     ports:
       - "32000:3306"
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: your_password
       MYSQL_DATABASE: tackle
     volumes:
-      - ./database:/docker-entrypoint-initdb.d/:ro
+      - ./database:/docker-entrypoint-initdb.d/:rw
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       interval: 10s
       timeout: 10s
       retries: 10
+
+# networks:
+#   app-network:
+#     driver: bridge
+
+# services:
+#   app:
+#     ...
+#     networks:
+#       - app-network
+
+#   db:
+#     ...
+#     networks:
+#       - app-network
